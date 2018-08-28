@@ -3,11 +3,6 @@
 
 int n;
 
-//배열 내용 복사
-void copy_array(int src[], int dst[]){
-	for(int i = 0; i < 6; i++) dst[i] = src[i];
-}
-
 //선택 가능 숫자 목록, 선택된 최대 숫자의 인덱스, 선택된 목록, 현재 선택된 수
 void choose(int list[], int idx, int result[], int cur){
 	if(cur == 6) {
