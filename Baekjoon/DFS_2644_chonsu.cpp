@@ -8,7 +8,7 @@ int jokbo[101][101];	//부자관계저장 jokbo[부][자] = jokbo[자][부] = 1
 
 void dfs(int q, int w, int x){	//부, 자, 현재 촌수
 	for(int i = 1; i <= n; i++){
-		if(jokbo[w][i] == 1 && i != q){
+		if(jokbo[w][i] == 1 && i != q){	//관계가 있고, 방문하지 않은 사람으로
 			if(i == t1){
 				printf("%d", x + 1);
 				flag = 1;
@@ -38,12 +38,13 @@ int main(){
 			printf("%d", 1);
 			return 0;
 		} 
-		if(jokbo[t0][i] == 1){
+		if(jokbo[t0][i] == 1){	//관계가 있는 사람에게 방문
 			dfs(t0, i, 1);
 			if(flag) return 0;
 		}
 	}
 
+	//관계가 없는 걸로 밝혀짐
 	printf("-1");
 
 	return 0;
