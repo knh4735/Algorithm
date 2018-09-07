@@ -7,26 +7,19 @@
 #include <stdio.h>
 #include <algorithm>
 
-int n, k;
-int c[101];
-
-int find(int key){
-	for(int i = 0; i < n; i++) if(key == c[i]) return 1;
-	return 0;
-}
 
 int main(){
+	int n, k;
 	scanf("%d %d", &n, &k);
 
+	int c[n];
 	for(int i = 0; i < n; i++) scanf("%d", &c[i]);
 
 	std::sort(c, c+n);
 
 	int r[k+1];
 	r[0] = 1;
-	for(int i = 1; i <= k; i++){
-		r[i] = (i % c[0] == 0 ? 1 : 0);
-	}
+	for(int i = 1; i <= k; i++) r[i] = (i % c[0] == 0 ? 1 : 0);
 
   /*
   1원으로만 만들면 a[i] = 1;
@@ -36,13 +29,10 @@ int main(){
   */
 	for(int j = 1; j < n; j++){
 		int coin = c[j];
-		for(int i = coin; i <= k; i++){
-			r[i] = r[i] + r[i-coin];
-		}
+		for(int i = coin; i <= k; i++) r[i] = r[i] + r[i-coin];
 	}
 
 	printf("%d", r[k]);
-	
 
 	return 0;
 }
