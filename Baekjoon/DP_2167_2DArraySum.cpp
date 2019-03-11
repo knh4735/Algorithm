@@ -7,7 +7,7 @@
 #include <stdio.h>
 
 int main(){
-	int a[301][301], b[301][301];
+	int a[301][301], b[301][301];	//b <= b[i][j] = a[i][0] +...+a[i][j], a[i][0] = 0
 	int n, m;
 	scanf("%d %d", &n, &m);
 
@@ -27,6 +27,7 @@ int main(){
 		int sum = 0;
 		scanf("%d %d %d %d", &sy, &sx, &ey, &ex);
 
+		//행마다 지정된 y 범위 합계 계산
 		for(int i = sy; i <= ey; i++)
 			sum += b[i][ex]-b[i][sx-1];
 
