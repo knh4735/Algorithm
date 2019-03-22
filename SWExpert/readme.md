@@ -6,11 +6,11 @@ Chrome Extension
 메타 데이터를 담은 JSON 형식의 파일
 ~~~json
 {
-    "name": "chrome-basic-extension",
+    "name": "제목",
     "version": "0.0.1",
     "manifest_version": 2,
-    "description": "크롬 기초 확장 프로그램",
-    //"homepage_url": "https://hiseon.me",
+    "description": "설명,
+    "homepage_url": "https://kweb.korea.ac.kr",
     "background": {
         "scripts": [
             "background.js"
@@ -22,8 +22,6 @@ Chrome Extension
         "default_page": "popup.html"
     },
     "permissions": [
-        "https://*/*",
-        "http://*/*",
         "tabs"
     ]
 }
