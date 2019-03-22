@@ -9,7 +9,7 @@ Chrome Extension
     "name": "제목",
     "version": "0.0.1",
     "manifest_version": 2,
-    "description": "설명,
+    "description": "설명",
     "homepage_url": "https://kweb.korea.ac.kr",
     "background": {
         "scripts": [
