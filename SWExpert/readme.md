@@ -3,8 +3,30 @@ Chrome Extension
 
 ### 기본 구성
 1. manifest.json
-
-
+메타 데이터를 담은 JSON 형식의 파일
+~~~
+{
+    "name": "chrome-basic-extension",
+    "version": "0.0.1",
+    "manifest_version": 2,
+    "description": "크롬 기초 확장 프로그램",
+    //"homepage_url": "https://hiseon.me",
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": true
+    },
+    "browser_action": {
+        "default_title": "Extension~"
+    },
+    "permissions": [
+        "https://*/*",
+        "http://*/*",
+        "tabs"
+    ]
+}
+~~~
 2. browser_action
 
 
