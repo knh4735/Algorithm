@@ -4,7 +4,7 @@ Chrome Extension
 ### 기본 구성
 1. manifest.json
 메타 데이터를 담은 JSON 형식의 파일
-~~~
+~~~json
 {
     "name": "chrome-basic-extension",
     "version": "0.0.1",
@@ -18,7 +18,8 @@ Chrome Extension
         "persistent": true
     },
     "browser_action": {
-        "default_title": "Extension~"
+        "default_title": "Extension~",
+        "default_page": "popup.html"
     },
     "permissions": [
         "https://*/*",
