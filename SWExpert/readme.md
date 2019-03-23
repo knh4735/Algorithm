@@ -1,6 +1,7 @@
 Chrome Extension
 ================
-
+0주차
+---
 ### 기본 구성
 
 1. manifest.json : 메타 데이터를 담은 JSON 형식의 파일
