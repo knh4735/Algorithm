@@ -70,3 +70,13 @@ ___
 1. 간단한 주제로 구현
 2. 아이디어를 결정해서 팀으로 또는 각자 프로젝트 진행
 - 이후. 서로 문제점이나 기술같은거 공유하면서 내용 발표
+
+######참조
+- [manifest](https://blog.martinwork.co.kr/javascript/2018/09/17/chrome-extension-manifest.html "manifest"), 
+[구성1](http://day-think.tumblr.com/post/64678968728/성대사랑-크롬확장-플러그인-개발기 "구성1"), 
+[구성2](https://www.letmecompile.com/chrome-extension-with-react/ "구성2"), 
+[구성3](https://joshuajangblog.wordpress.com/tag/크롬-익스텐션/ "구성3"), 
+[Chrome Background](https://developer.chrome.com/extensions/background_pages "Chrome Background"), 
+[Chrome Permission](https://developer.chrome.com/extensions/declare_permissions "Chrome Permission"), 
+[Chrome Content](https://developer.chrome.com/extensions/content_scripts#functionality "Chrome Content"), 
+[Chrome 등록하기](https://support.google.com/chrome/a/answer/2714278?hl=ko "Chrome 등록하기")
