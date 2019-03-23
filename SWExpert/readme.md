@@ -71,7 +71,7 @@ ___
 2. 아이디어를 결정해서 팀으로 또는 각자 프로젝트 진행
 - 이후. 서로 문제점이나 기술같은거 공유하면서 내용 발표
 
-##### 참조
+#### 참조
 - [manifest](https://blog.martinwork.co.kr/javascript/2018/09/17/chrome-extension-manifest.html "manifest"), 
 [구성1](http://day-think.tumblr.com/post/64678968728/성대사랑-크롬확장-플러그인-개발기 "구성1"), 
 [구성2](https://www.letmecompile.com/chrome-extension-with-react/ "구성2"), 
