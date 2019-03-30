@@ -32,7 +32,7 @@ Chrome Extension
     ],
     "browser_action": {
         "default_title": "Extension!",
-        "default_page": "popup.html"
+        "default_popup": "popup.html"
     },
     "permissions": [
         "tabs"
@@ -51,7 +51,7 @@ Chrome Extension
 
 4. `browser_action` : 브라우저 오른쪽 위에 나타나는 아이콘에 관련된 부분
 	- `default_title` : 아이콘에 커서를 올렸을 때 나타나는 문구
-	- `default_page` : 아이콘을 클릭했을 때 나타날 페이지
+	- `default_popup` : 아이콘을 클릭했을 때 나타날 페이지
 	- 이외에도 `default_icon` 등의 내용을 등록할 수 있습니다.
 
 5. 기타
