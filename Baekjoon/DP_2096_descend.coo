@@ -1,0 +1,55 @@
+// 2096 내려가기 시간복잡도(DP)
+#include <stdio.h>
+
+// int max(int q, int w, int e = -1){
+// 	if(q > w){
+// 		if(q > e) return q;
+// 		else return e;
+// 	} else {
+// 		if(w > e) return w;
+// 		else return e;
+// 	}
+// }
+
+// int min(int q, int w, int e = 10){
+// 	if(q < w){
+// 		if(q < e) return q;
+// 		else return e;
+// 	} else {
+// 		if(w < e) return w;
+// 		else return e;
+// 	}
+// }
+
+int max(int q, int w){
+	if(q > w) return q;
+	else return w;
+}
+int min(int q, int w){
+	if(q > w) return w;
+	else return q;
+}
+
+int dp_max[2][3], dp_min[2][3];
+
+int main(){
+	int n;
+	int a[3];
+
+	scanf("%d", &n);
+	for(int i = 0; i < n; i++){
+		scanf("%d %d %d", &a[0], &a[1], &a[2]);
+		
+		dp_max[i % 2][0] = a[0] + max(dp_max[(i+1) % 2][0], dp_max[(i+1) % 2][1]);
+		dp_max[i % 2][1] = a[1] + max(max(dp_max[(i+1) % 2][0], dp_max[(i+1) % 2][1]), dp_max[(i+1) % 2][2]);
+		dp_max[i % 2][2] = a[2] + max(dp_max[(i+1) % 2][1], dp_max[(i+1) % 2][2]);
+
+		dp_min[i % 2][0] = a[0] + min(dp_min[(i+1) % 2][0], dp_min[(i+1) % 2][1]);
+		dp_min[i % 2][1] = a[1] + min(min(dp_min[(i+1) % 2][0], dp_min[(i+1) % 2][1]), dp_min[(i+1) % 2][2]);
+		dp_min[i % 2][2] = a[2] + min(dp_min[(i+1) % 2][1], dp_min[(i+1) % 2][2]);
+	}
+
+	printf("%d %d\n", max(max(dp_max[(n-1)%2][0], dp_max[(n-1)%2][1]), dp_max[(n-1)%2][2]), min(min(dp_min[(n-1)%2][0], dp_min[(n-1)%2][1]), dp_min[(n-1)%2][2]));
+
+	return 0;
+}
