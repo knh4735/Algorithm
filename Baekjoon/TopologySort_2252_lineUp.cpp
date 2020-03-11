@@ -42,6 +42,7 @@ int main(){
 
 		inbound[t]++;
 	
+		// 학생 노드 배열에 자신보다 큰 학생들을 연결리스트에 추가
 		NODE *cur = &student[s];
 		while(cur->next != nullptr) cur = cur->next;
 		node[node_cnt].num = t;
@@ -49,25 +50,19 @@ int main(){
 		node_cnt++;
 	}
 
+	// inbound가 0인 학생 push
 	for(int i = 1; i <= n; i++){
 		if(inbound[i] == 0) q.push(i);
 	}
 
-	// NODE *cur = student[1];
-	// printf("%d ", cur->num);
-	// while(cur != NULL){
-	// 	int outbound = cur->num;
-	// 	printf("%d ", outbound);
-	// 	cur = cur->next;
-	// }
-	// 	printf("\n");
-
 	for(int i = 0; i < n; i++){
+		// 큐에서 나온 순서대로 출력
 		int std = q.pop();
 		printf("%d ", std);
 
 		NODE *cur = &student[std];
 		while(cur->next != nullptr){
+			// 자신보다 큰 학생들을 연결리스트에서 뽑아 inbound 감소
 			cur = cur->next;
 			int outbound = cur->num;
 			
