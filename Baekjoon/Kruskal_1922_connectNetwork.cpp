@@ -1,4 +1,5 @@
 // 1922 네트워크연결 그래프1(크루스칼)
+// 간선의 수가 적은 경우엔 크루스칼
 #include <stdio.h>
 #include <algorithm>
 
