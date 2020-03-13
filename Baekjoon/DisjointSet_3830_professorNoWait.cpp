@@ -11,17 +11,6 @@ int find(long long weight[], int group[], int q){
 	return root;
 }
 
-long long diff(long long weight[], int group[], int q, int rq){
-	long long wq = weight[q];
-	int gq = group[q];
-	while(gq != rq){
-		wq += weight[gq];
-		gq = group[gq];
-	}
-
-	return wq;
-}
-
 int main(){
 	while(1){
 		int n, m;
