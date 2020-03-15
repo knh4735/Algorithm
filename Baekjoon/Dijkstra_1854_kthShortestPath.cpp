@@ -22,6 +22,7 @@ int main(){
 	int n, m, k;
 	vector<EDGE> e[1001];
 	priority_queue<ELEM> pq;
+	// 각 노드의 최단경로 저장 (최댓값이 top)
 	priority_queue<int, vector<int>, less<int>> dist[1001];
 	int check[1001] = {0, };
 
@@ -45,6 +46,7 @@ int main(){
 			int next = edge.to;
 			int d = edge.cost + elem.dist;
 
+			// 현재 k번째보다 작으면 k번째를 삭제 후 추가
 			if(dist[next].size() < k){
 				dist[next].push(d);
 				pq.push({edge.to, d});
