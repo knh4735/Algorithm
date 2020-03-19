@@ -1,0 +1,37 @@
+// 6588 골드바흐의추측 정수론(에라토스테네스의체)
+#include <stdio.h>
+#include <cmath>
+#include <vector>
+using namespace std;
+
+int main(){
+	int a[1000001] = {0, };
+	vector<int> prime;
+	for(int i = 2; i < 1000001; i++){
+		if(a[i] != 0) continue;
+		
+		prime.push_back(i);
+		a[i] = 1;
+
+		if(i > sqrt(1000001)) continue;
+		for(int j = i * 2; j < 1000001; j += i) a[j] = 2;
+	}
+
+	int n;
+	while(1){
+		scanf("%d", &n);
+		if(n == 0) break;
+
+		for(auto num: prime){
+			if(a[n - num] == 1){
+				printf("%d = %d + %d\n", n, num, n - num);
+				break;
+			} else if(num > n / 2) {
+				printf("Goldbach's conjecture is wrong.\n");
+				break;
+			}
+		}
+	}
+
+	return 0;
+}
