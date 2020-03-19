@@ -1,0 +1,57 @@
+// 1644 소수의연속합 정수론(TwoPointer)
+#include <stdio.h>
+#include <cmath>
+#include <vector>
+using namespace std;
+
+int main(){
+	int n;
+	scanf("%d", &n);
+
+	int p[4000001] = {0, };
+	vector<int> prime;
+
+	for(int i = 2; i <= n; i++){
+		if(p[i] == 0){
+			prime.push_back(i);
+			
+			if(i > ceil(sqrt(n))) continue;
+
+			for(int j = i; j <= n; j += i){
+				if(p[j] == 1) continue;
+				p[j] = 1;
+			}
+		}
+	}
+
+	if(n == 1){
+		printf("0");
+		return 0;
+	}
+
+	int hd = 0, tl = 0;
+	int sum = prime[0];
+	int ans = 0;
+
+	while(1){
+		// printf("%d %d %d\n", hd, tl, sum);
+		if(sum < n){
+			tl++;
+			if(tl >= prime.size()) break;
+			sum += prime[tl];
+		} else if(sum > n){
+			if(hd >= prime.size()) break;
+			sum -= prime[hd];
+			hd++;
+		} else{
+			ans++;
+			if(hd >= prime.size()) break;
+			sum -= prime[hd];
+			hd++;
+		}
+	}
+	
+	printf("%d", ans);
+
+	return 0;
+}
