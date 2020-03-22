@@ -1,14 +1,9 @@
-/*
-9252 LCS LCS(Longest Common Subsequence)-DP
-두 문자열에 포함된 부분 수열 중 가장 긴 것을 찾기
-입력 : ~2 문자열 (최대 1000자)
-출력 : LCS의 길이 \n LCS 문자열
-*/
+// 9252 LCS2 DP(LCS)
 #include <stdio.h>
 #include <string.h>
 
-char s1[1001], s2[1001], s[1001];
-int lcs[1001][1001];
+char s1[1002], s2[1002], s[1002];
+int lcs[1002][1002];
 
 int max(int a, int b){return a > b ? a : b;}
 
@@ -29,6 +24,11 @@ int main(){
 		}
 	}
 
+	if(lcs[n1][n2] == 0){
+		printf("0\n");
+		return 0;
+	}
+
 	int lastIdx = 0, last1, last2;
 	char lastC;
 
@@ -39,6 +39,7 @@ int main(){
 		for(int i = 1; i < max1; i++){
 			for(int j = 1; j < max2; j++){
 				if(lcs[i][j] > lastIdx){
+					// printf("%d %d %d %d %d\n", max1, max2, i, j, lcs[i][j]);
 					lastIdx = lcs[i][j];
 					last1 = i;
 					last2 = j;
